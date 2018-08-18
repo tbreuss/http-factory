@@ -24,9 +24,7 @@ $ composer require tebe/http-factory:@dev
 ### Using Constructor
 
 ~~~php
-use Tebe\HttpFactory\HttpFactory;
-
-$factory = new HttpFactory();
+$factory = new \Tebe\HttpFactory\HttpFactory();
 $response = $factory->createResponse(200);
 echo $response->getStatusCode();
 ~~~
@@ -34,38 +32,32 @@ echo $response->getStatusCode();
 ### Using static instance method
 
 ~~~php
-use Tebe\HttpFactory\HttpFactory;
-
-$response = HttpFactory::instance()->createResponse(200);
+$response = \Tebe\HttpFactory\HttpFactory::instance()->createResponse(200);
 echo $response->getStatusCode();
 ~~~
 
 ### Using own strategies 
 
 ~~~php
-use Tebe\HttpFactory\HttpFactory;
-
 // Using own strategies
-HttpFactory::setStrategies([
+\Tebe\HttpFactory\HttpFactory::setStrategies([
     DiactorosFactory::class,
     GuzzleFactory::class,
     SlimFactory::class
 ]);
-$response = HttpFactory::instance()->createResponse(200);
+$response = \Tebe\HttpFactory\HttpFactory::instance()->createResponse(200);
 echo $response->getStatusCode();
 ~~~
 
 ### Using own factory
 
 ~~~php
-use Tebe\HttpFactory\HttpFactory;
-
 class MyFactory implements \Tebe\HttpFactor\Factory\FactoryInterface
 {
-    // implement methods
+    // implement interface methods
 }
 
-$factory = new HttpFactory();
+$factory = new \Tebe\HttpFactory\HttpFactory();
 $factory->setFactory(new MyFactory());
 $response = $factory->createResponse(200);
 echo $response->getStatusCode();

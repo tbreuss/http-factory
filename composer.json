@@ -1,7 +1,7 @@
 {
   "name": "tebe/http-factory",
   "type": "library",
-  "description": "HTTP factory to create PSR-15 middleware",
+  "description": "HTTP-Factory is a library that implements the PSR-17 HTTP factory interface. Additionally it has built-in support for different PSR-7 packages.",
   "license": "MIT",
   "keywords": [
     "psr-7",

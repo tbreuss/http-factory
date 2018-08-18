@@ -1,7 +1,7 @@
 # HTTP-Factory
 
 :factory: HTTP-Factory is a PHP package that implements the PSR-17 HTTP factory interface.
-Additionally it has built-in support for the following PSR-7 packages:
+Additionally it has built-in autodiscovery support for the following PSR-7 packages:
 
 - zendframework/zend-diactoros
 - slim/slim

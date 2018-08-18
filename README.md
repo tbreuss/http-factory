@@ -15,7 +15,7 @@ The package acts as a simple facade which allows easy access to the above packag
 Composer is your friend.
 
 ~~~
-$ composer require tebe/http-factory
+$ composer require tebe/http-factory:@dev
 ~~~
 
 

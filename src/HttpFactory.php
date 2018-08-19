@@ -114,7 +114,6 @@ class HttpFactory implements FactoryInterface
         return $this->getFactory()->createUri($uri);
     }
 
-
     /**
      * @return static
      */
@@ -128,7 +127,7 @@ class HttpFactory implements FactoryInterface
     }
 
     /**
-     * @return static
+     * @param array $strategies
      */
     public static function setStrategies(array $strategies)
     {

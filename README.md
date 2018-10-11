@@ -1,19 +1,20 @@
 # HTTP-Factory
 
 :factory: HTTP-Factory is a PHP package that implements the [PSR-17 HTTP factories](https://www.php-fig.org/psr/psr-17/) interface.
-Additionally it has auto-discovery support for the following PSR-7 packages:
+
+The package includes auto-discovery support for the following PSR-7 packages:
 
 1. zendframework/zend-diactoros
 2. guzzlehttp/psr7  
 3. slim/slim
 
-The package acts as a simple facade which allows easy access to the above packages.
+It acts as a simple facade which allows easy access to the above packages.
 
-## Autodiscovering PSR-7 packages 
 
-The autodiscovery mechanism assumes that in your code you are using one (and only one) of the above PSR-7 packages.
-It does not support a mixture of different PSR-7 packages. 
-The first detected PSR-17 package will be used for all factory methods.
+## Auto-discovering PSR-7 packages 
+
+The auto-discovery mechanism assumes that you are using one (and only one) of the above PSR-7 packages in your code.
+The first detected PSR-17 package will be used for all interface factory methods.
 
 
 ## Installation

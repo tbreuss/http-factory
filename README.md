@@ -1,5 +1,12 @@
 # HTTP-Factory
 
+[![Travis](https://img.shields.io/travis/tbreuss/http-factory.svg)](https://travis-ci.org/tbreuss/http-factory)
+[![Packagist](https://img.shields.io/packagist/dt/tebe/http-factory.svg)](https://packagist.org/packages/tebe/http-factory)
+[![GitHub (pre-)release](https://img.shields.io/github/release/tbreuss/http-factory/all.svg)](https://github.com/tbreuss/http-factory/releases)
+[![License](https://img.shields.io/github/license/tbreuss/http-factory.svg)](https://github.com/tbreuss/http-factory/blob/master/LICENSE)
+[![PHP from Packagist](https://img.shields.io/packagist/php-v/tebe/http-factory.svg)](https://packagist.org/packages/tebe/http-factory)
+
+
 :factory: HTTP-Factory is a PHP package that implements the [PSR-17 HTTP factories](https://www.php-fig.org/psr/psr-17/) interface.
 
 The package includes auto-discovery support for the following PSR-7 packages:

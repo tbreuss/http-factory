@@ -20,11 +20,23 @@
   "require-dev": {
     "zendframework/zend-diactoros": "^1.8",
     "slim/slim": "^3.10",
-    "guzzlehttp/psr7": "^1.4"
+    "guzzlehttp/psr7": "^1.4",
+    "phpunit/phpunit": "^7.4",
+    "squizlabs/php_codesniffer": "^3.3"
   },
   "autoload": {
     "psr-4": {
-      "Tebe\\HttpFactory\\": "src/"
+      "Tebe\\HttpFactory\\": "src/",
+      "Tests\\Tebe\\HttpFactory\\": "tests/"
     }
+  },
+  "scripts": {
+    "test": [
+      "@phpcs",
+      "@phpunit"
+    ],
+    "phpcbf": "./vendor/bin/phpcbf",
+    "phpcs": "./vendor/bin/phpcs",
+    "phpunit": "./vendor/bin/phpunit"
   }
 }

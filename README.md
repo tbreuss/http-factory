@@ -1,6 +1,7 @@
 # HTTP-Factory
 
 [![Travis](https://img.shields.io/travis/tbreuss/http-factory.svg)](https://travis-ci.org/tbreuss/http-factory)
+[![Scrutinizer](https://img.shields.io/scrutinizer/g/tbreuss/http-factory.svg)](https://scrutinizer-ci.com/g/tbreuss/http-factory/)
 [![Packagist](https://img.shields.io/packagist/dt/tebe/http-factory.svg)](https://packagist.org/packages/tebe/http-factory)
 [![GitHub (pre-)release](https://img.shields.io/github/release/tbreuss/http-factory/all.svg)](https://github.com/tbreuss/http-factory/releases)
 [![License](https://img.shields.io/github/license/tbreuss/http-factory.svg)](https://github.com/tbreuss/http-factory/blob/master/LICENSE)

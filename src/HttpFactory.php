@@ -20,7 +20,7 @@ class HttpFactory implements FactoryInterface
 {
 
     /**
-     * @var HttpFactoryInterface
+     * @var FactoryInterface
      */
     private $factory;
 
@@ -34,15 +34,17 @@ class HttpFactory implements FactoryInterface
     ];
 
     /**
-     * @param HttpFactoryInterface $factory
+     * @param FactoryInterface $factory
+     * @return HttpFactory
      */
-    public function setFactory(HttpFactoryInterface $factory)
+    public function setFactory(FactoryInterface $factory)
     {
         $this->factory = $factory;
+        return $this;
     }
 
     /**
-     * @return HttpFactoryInterface
+     * @return FactoryInterface
      */
     public function getFactory()
     {
@@ -51,7 +53,6 @@ class HttpFactory implements FactoryInterface
         }
 
         foreach (self::$strategies as $className) {
-
             if (!class_exists($className)) {
                 continue;
             }
@@ -132,5 +133,13 @@ class HttpFactory implements FactoryInterface
     public static function setStrategies(array $strategies)
     {
         static::$strategies = $strategies;
+    }
+
+    /**
+     * @return array
+     */
+    public static function getStrategies()
+    {
+        return static::$strategies;
     }
 }

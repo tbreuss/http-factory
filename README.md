@@ -21,15 +21,13 @@ It acts as a simple facade which allows easy access to the above packages.
 
 ## Auto-discovering PSR-7 packages 
 
-The auto-discovery mechanism assumes that you are using one (and only one) of the above PSR-7 packages in your code.
-The first detected PSR-17 package will be used for all interface factory methods.
+The auto-discovery mechanism assumes that you are using one (and only one) of the above PSR-7 packages in your project.
+The first detected PSR-17 package will then be used for all interface factory methods.
 
 
 ## Installation
 
-Composer is your friend.
-
-As a prerequisite one of the following PSR-7 packages must be installed.
+When starting a new project one of the following PSR-7 packages must be installed.
 
 ~~~
 $ composer require zendframework/zend-diactoros
@@ -37,13 +35,13 @@ $ composer require guzzlehttp/psr7
 $ composer require slim/slim
 ~~~
 
-Install the HTTP-Factory package.
+Then install the HTTP-Factory package.
 
 ~~~
-$ composer require tebe/http-factory:@dev
+$ composer require tebe/http-factory
 ~~~
 
-You can now use HTTP-Factory in your project.
+You can now use HTTP-Factory in the codebase of your project.
 
 
 ## Usage

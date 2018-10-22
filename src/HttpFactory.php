@@ -11,6 +11,7 @@ use RuntimeException;
 use Tebe\HttpFactory\Factory\DiactorosFactory;
 use Tebe\HttpFactory\Factory\FactoryInterface;
 use Tebe\HttpFactory\Factory\GuzzleFactory;
+use Tebe\HttpFactory\Factory\NyholmFactory;
 use Tebe\HttpFactory\Factory\SlimFactory;
 
 /**
@@ -30,7 +31,8 @@ class HttpFactory implements FactoryInterface
     private static $strategies = [
         DiactorosFactory::class,
         GuzzleFactory::class,
-        SlimFactory::class
+        SlimFactory::class,
+        NyholmFactory::class
     ];
 
     /**

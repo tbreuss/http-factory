@@ -14,6 +14,7 @@ The package includes auto-discovery support for the following PSR-7 packages:
 1. zendframework/zend-diactoros
 2. guzzlehttp/psr7  
 3. slim/slim
+4. nyholm/psr7
 
 It acts as a simple facade which allows easy access to the above packages.
 
@@ -34,6 +35,7 @@ As a prerequisite one of the following PSR-7 packages must be installed.
 $ composer require zendframework/zend-diactoros
 $ composer require guzzlehttp/psr7
 $ composer require slim/slim
+$ composer require nyholm/psr7
 ~~~
 
 Install the HTTP-Factory package.

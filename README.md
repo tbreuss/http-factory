@@ -1,6 +1,7 @@
 # HTTP-Factory
 
 [![Travis](https://img.shields.io/travis/tbreuss/http-factory.svg)](https://travis-ci.org/tbreuss/http-factory)
+[![Scrutinizer](https://img.shields.io/scrutinizer/g/tbreuss/http-factory.svg)](https://scrutinizer-ci.com/g/tbreuss/http-factory/)
 [![Packagist](https://img.shields.io/packagist/dt/tebe/http-factory.svg)](https://packagist.org/packages/tebe/http-factory)
 [![GitHub (pre-)release](https://img.shields.io/github/release/tbreuss/http-factory/all.svg)](https://github.com/tbreuss/http-factory/releases)
 [![License](https://img.shields.io/github/license/tbreuss/http-factory.svg)](https://github.com/tbreuss/http-factory/blob/master/LICENSE)
@@ -21,15 +22,13 @@ It acts as a simple facade which allows easy access to the above packages.
 
 ## Auto-discovering PSR-7 packages 
 
-The auto-discovery mechanism assumes that you are using one (and only one) of the above PSR-7 packages in your code.
-The first detected PSR-17 package will be used for all interface factory methods.
+The auto-discovery mechanism assumes that you are using one (and only one) of the above PSR-7 packages in your project.
+The first detected PSR-17 package will then be used for all interface factory methods.
 
 
 ## Installation
 
-Composer is your friend.
-
-As a prerequisite one of the following PSR-7 packages must be installed.
+When starting a new project one of the following PSR-7 packages must be installed.
 
 ~~~
 $ composer require zendframework/zend-diactoros
@@ -38,13 +37,13 @@ $ composer require slim/slim
 $ composer require nyholm/psr7
 ~~~
 
-Install the HTTP-Factory package.
+Then install the HTTP-Factory package.
 
 ~~~
-$ composer require tebe/http-factory:@dev
+$ composer require tebe/http-factory
 ~~~
 
-You can now use HTTP-Factory in your project.
+You can now use HTTP-Factory in the codebase of your project.
 
 
 ## Usage

@@ -30,7 +30,7 @@ The first detected PSR-17 package will then be used for all interface factory me
 
 When starting a new project one of the following PSR-7 packages must be installed.
 
-~~~
+~~~bash
 $ composer require zendframework/zend-diactoros
 $ composer require guzzlehttp/psr7
 $ composer require slim/slim
@@ -39,7 +39,7 @@ $ composer require nyholm/psr7
 
 Then install the HTTP-Factory package.
 
-~~~
+~~~bash
 $ composer require tebe/http-factory
 ~~~
 

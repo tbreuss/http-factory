@@ -79,7 +79,7 @@ echo $response->getStatusCode();
 ### Using own factory
 
 ~~~php
-class MyFactory implements \Tebe\HttpFactor\Factory\FactoryInterface
+class MyFactory implements \Tebe\HttpFactory\Factory\FactoryInterface
 {
     // implement interface methods
 }

@@ -51,7 +51,9 @@ You can now use HTTP-Factory in the codebase of your project.
 ### Using constructor
 
 ~~~php
-$factory = new \Tebe\HttpFactory\HttpFactory();
+use Tebe\HttpFactory\HttpFactory;
+
+$factory = new HttpFactory();
 $response = $factory->createResponse(200);
 echo $response->getStatusCode();
 ~~~
@@ -59,32 +61,39 @@ echo $response->getStatusCode();
 ### Using static instance method
 
 ~~~php
-$response = \Tebe\HttpFactory\HttpFactory::instance()->createResponse(200);
+use Tebe\HttpFactory\HttpFactory;
+
+$response = HttpFactory::instance()->createResponse(200);
 echo $response->getStatusCode();
 ~~~
 
 ### Using own strategies 
 
 ~~~php
-// Using own strategies
-\Tebe\HttpFactory\HttpFactory::setStrategies([
+use Tebe\HttpFactory\HttpFactory;
+
+HttpFactory::setStrategies([
     DiactorosFactory::class,
     GuzzleFactory::class,
     SlimFactory::class
 ]);
-$response = \Tebe\HttpFactory\HttpFactory::instance()->createResponse(200);
+
+$response = HttpFactory::instance()->createResponse(200);
 echo $response->getStatusCode();
 ~~~
 
 ### Using own factory
 
 ~~~php
-class MyFactory implements \Tebe\HttpFactory\Factory\FactoryInterface
+use Tebe\HttpFactory\HttpFactory;
+use Tebe\HttpFactory\FactoryInterface;
+
+class MyFactory implements FactoryInterface
 {
     // implement interface methods
 }
 
-$factory = new \Tebe\HttpFactory\HttpFactory();
+$factory = new HttpFactory();
 $factory->setFactory(new MyFactory());
 $response = $factory->createResponse(200);
 echo $response->getStatusCode();

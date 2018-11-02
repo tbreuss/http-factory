@@ -6,6 +6,7 @@ use PHPUnit\Framework\TestCase;
 use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\ServerRequestInterface;
 use Psr\Http\Message\StreamInterface;
+use Psr\Http\Message\UploadedFileInterface;
 use Psr\Http\Message\UriInterface;
 use RuntimeException;
 use Tebe\HttpFactory\Factory\DiactorosFactory;
@@ -85,6 +86,15 @@ class HttpFactoryTest extends TestCase
     public function testCreateUri()
     {
         $this->assertInstanceOf(UriInterface::class, $this->factory->createUri('http://example.com'));
+    }
+
+    public function testCreateUploadedFile()
+    {
+        $file = __DIR__ . '/resources/file.txt';
+        $stream = $this->factory->createStreamFromFile($file);
+        $size = $stream->getSize();
+        $uploadedFile = $this->factory->createUploadedFile($stream, $size);
+        $this->assertInstanceOf(UploadedFileInterface::class, $uploadedFile);
     }
 
     public function testInstance()

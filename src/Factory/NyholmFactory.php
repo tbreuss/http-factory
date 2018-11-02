@@ -8,6 +8,7 @@ use Nyholm\Psr7\Factory\Psr17Factory;
 use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\ServerRequestInterface;
 use Psr\Http\Message\StreamInterface;
+use Psr\Http\Message\UploadedFileInterface;
 use Psr\Http\Message\UriInterface;
 
 class NyholmFactory implements FactoryInterface
@@ -78,5 +79,18 @@ class NyholmFactory implements FactoryInterface
     public function createUri(string $uri = ''): UriInterface
     {
         return $this->factory->createUri($uri);
+    }
+
+    /**
+     * @inheritdoc
+     */
+    public function createUploadedFile(
+        StreamInterface $stream,
+        int $size = null,
+        int $error = \UPLOAD_ERR_OK,
+        string $clientFilename = null,
+        string $clientMediaType = null
+    ): UploadedFileInterface {
+        return $this->factory->createUploadedFile($stream, $size, $error, $clientFilename, $clientMediaType);
     }
 }

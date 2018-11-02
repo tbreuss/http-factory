@@ -6,10 +6,12 @@ namespace Tebe\HttpFactory\Factory;
 use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\ServerRequestInterface;
 use Psr\Http\Message\StreamInterface;
+use Psr\Http\Message\UploadedFileInterface;
 use Psr\Http\Message\UriInterface;
 use Zend\Diactoros\Response;
 use Zend\Diactoros\ServerRequest;
 use Zend\Diactoros\Stream;
+use Zend\Diactoros\UploadedFile;
 use Zend\Diactoros\Uri;
 
 /**
@@ -86,5 +88,18 @@ class DiactorosFactory implements FactoryInterface
     public function createUri(string $uri = ''): UriInterface
     {
         return new Uri($uri);
+    }
+
+    /**
+     * @inheritdoc
+     */
+    public function createUploadedFile(
+        StreamInterface $stream,
+        int $size = null,
+        int $error = \UPLOAD_ERR_OK,
+        string $clientFilename = null,
+        string $clientMediaType = null
+    ): UploadedFileInterface {
+        return new UploadedFile($stream, $size, $error, $clientFilename, $clientMediaType);
     }
 }

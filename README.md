@@ -8,19 +8,26 @@
 [![PHP from Packagist](https://img.shields.io/packagist/php-v/tebe/http-factory.svg)](https://packagist.org/packages/tebe/http-factory)
 
 
-:factory: HTTP-Factory is a PHP package that implements the [PSR-17 HTTP factories](https://www.php-fig.org/psr/psr-17/) interface.
+:factory: HTTP-Factory is a PHP package that implements [PSR-17 HTTP factories](https://www.php-fig.org/psr/psr-17/) interface.
+Additionally it acts as a simple facade which allows easy access to concrete HTTP Factory packages.
 
-The package includes auto-discovery support for the following PSR-7 packages:
+Alle PSR-17 interfaces are implemented:
+
+- Psr\Http\Message\ResponseFactoryInterface
+- Psr\Http\Message\ServerRequestFactoryInterface
+- Psr\Http\Message\StreamFactoryInterface
+- Psr\Http\Message\UploadedFileFactoryInterface
+- Psr\Http\Message\UriFactoryInterface
+
+
+## Auto-discovering PSR-7 packages 
+
+The package features auto-discovery support for the following PSR-7 packages:
 
 1. zendframework/zend-diactoros
 2. guzzlehttp/psr7  
 3. slim/slim
 4. nyholm/psr7
-
-It acts as a simple facade which allows easy access to the above packages.
-
-
-## Auto-discovering PSR-7 packages 
 
 The auto-discovery mechanism assumes that you are using one (and only one) of the above PSR-7 packages in your project.
 The first detected PSR-17 package will then be used for all interface factory methods.

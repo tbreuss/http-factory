@@ -3,10 +3,12 @@
 namespace Tests\Tebe\HttpFactory;
 
 use PHPUnit\Framework\TestCase;
+use Psr\Http\Message\UploadedFileInterface;
 use Tebe\HttpFactory\Factory\DiactorosFactory;
 use Zend\Diactoros\Response;
 use Zend\Diactoros\ServerRequest;
 use Zend\Diactoros\Stream;
+use Zend\Diactoros\UploadedFile;
 use Zend\Diactoros\Uri;
 
 class DiactorosFactoryTest extends TestCase
@@ -56,5 +58,14 @@ class DiactorosFactoryTest extends TestCase
     public function testCreateUri()
     {
         $this->assertInstanceOf(Uri::class, $this->factory->createUri('http://example.com'));
+    }
+
+    public function testCreateUploadedFile()
+    {
+        $file = dirname(__DIR__) . '/resources/file.txt';
+        $stream = $this->factory->createStreamFromFile($file);
+        $size = $stream->getSize();
+        $uploadedFile = $this->factory->createUploadedFile($stream, $size);
+        $this->assertInstanceOf(UploadedFileInterface::class, $uploadedFile);
     }
 }

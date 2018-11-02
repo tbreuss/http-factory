@@ -6,10 +6,12 @@ namespace Tebe\HttpFactory\Factory;
 use GuzzleHttp\Psr7\Response;
 use GuzzleHttp\Psr7\ServerRequest;
 use GuzzleHttp\Psr7\Stream;
+use GuzzleHttp\Psr7\UploadedFile;
 use GuzzleHttp\Psr7\Uri;
 use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\ServerRequestInterface;
 use Psr\Http\Message\StreamInterface;
+use Psr\Http\Message\UploadedFileInterface;
 use Psr\Http\Message\UriInterface;
 
 /**
@@ -77,5 +79,18 @@ class GuzzleFactory implements FactoryInterface
     public function createUri(string $uri = ''): UriInterface
     {
         return new Uri($uri);
+    }
+
+    /**
+     * @inheritdoc
+     */
+    public function createUploadedFile(
+        StreamInterface $stream,
+        int $size = null,
+        int $error = \UPLOAD_ERR_OK,
+        string $clientFilename = null,
+        string $clientMediaType = null
+    ): UploadedFileInterface {
+        return new UploadedFile($stream, $size, $error, $clientFilename, $clientMediaType);
     }
 }

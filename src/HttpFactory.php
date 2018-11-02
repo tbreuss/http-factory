@@ -6,6 +6,7 @@ namespace Tebe\HttpFactory;
 use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\ServerRequestInterface;
 use Psr\Http\Message\StreamInterface;
+use PSR\Http\Message\UploadedFileInterface;
 use Psr\Http\Message\UriInterface;
 use RuntimeException;
 use Tebe\HttpFactory\Factory\DiactorosFactory;
@@ -115,6 +116,19 @@ class HttpFactory implements FactoryInterface
     public function createUri(string $uri = ''): UriInterface
     {
         return $this->getFactory()->createUri($uri);
+    }
+
+    /**
+     * @inheritdoc
+     */
+    public function createUploadedFile(
+        StreamInterface $stream,
+        int $size = null,
+        int $error = \UPLOAD_ERR_OK,
+        string $clientFilename = null,
+        string $clientMediaType = null
+    ): UploadedFileInterface {
+        return $this->getFactory()->createUploadedFile($stream, $size, $error, $clientFilename, $clientMediaType);
     }
 
     /**

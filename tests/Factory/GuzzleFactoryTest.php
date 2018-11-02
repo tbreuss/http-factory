@@ -7,6 +7,7 @@ use GuzzleHttp\Psr7\ServerRequest;
 use GuzzleHttp\Psr7\Stream;
 use GuzzleHttp\Psr7\Uri;
 use PHPUnit\Framework\TestCase;
+use Psr\Http\Message\UploadedFileInterface;
 use Tebe\HttpFactory\Factory\GuzzleFactory;
 
 class GuzzleFactoryTest extends TestCase
@@ -56,5 +57,14 @@ class GuzzleFactoryTest extends TestCase
     public function testCreateUri()
     {
         $this->assertInstanceOf(Uri::class, $this->factory->createUri('http://example.com'));
+    }
+
+    public function testCreateUploadedFile()
+    {
+        $file = dirname(__DIR__) . '/resources/file.txt';
+        $stream = $this->factory->createStreamFromFile($file);
+        $size = $stream->getSize();
+        $uploadedFile = $this->factory->createUploadedFile($stream, $size);
+        $this->assertInstanceOf(UploadedFileInterface::class, $uploadedFile);
     }
 }

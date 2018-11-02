@@ -11,7 +11,7 @@
 :factory: HTTP-Factory is a PHP package that implements [PSR-17 HTTP factories](https://www.php-fig.org/psr/psr-17/) interface.
 Additionally it acts as a simple facade which allows easy access to concrete HTTP Factory packages.
 
-Alle PSR-17 interfaces are implemented:
+All PSR-17 interfaces are implemented:
 
 - Psr\Http\Message\ResponseFactoryInterface
 - Psr\Http\Message\ServerRequestFactoryInterface

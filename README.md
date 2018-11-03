@@ -1,4 +1,4 @@
-# HTTP-Factory
+# :factory: HTTP-Factory
 
 [![Travis](https://img.shields.io/travis/tbreuss/http-factory.svg)](https://travis-ci.org/tbreuss/http-factory)
 [![Scrutinizer](https://img.shields.io/scrutinizer/g/tbreuss/http-factory.svg)](https://scrutinizer-ci.com/g/tbreuss/http-factory/)
@@ -8,7 +8,7 @@
 [![PHP from Packagist](https://img.shields.io/packagist/php-v/tebe/http-factory.svg)](https://packagist.org/packages/tebe/http-factory)
 
 
-:factory: HTTP-Factory is a PHP package that implements [PSR-17 HTTP factories](https://www.php-fig.org/psr/psr-17/) interface.
+HTTP-Factory is a PHP package that implements [PSR-17 HTTP factories](https://www.php-fig.org/psr/psr-17/) interface.
 Additionally it acts as a simple facade which allows easy access to concrete HTTP Factory packages.
 
 All PSR-17 interfaces are implemented:

@@ -10,6 +10,7 @@ use Psr\Http\Message\UploadedFileInterface;
 use Psr\Http\Message\UriInterface;
 use Zend\Diactoros\Response;
 use Zend\Diactoros\ServerRequest;
+use Zend\Diactoros\ServerRequestFactory;
 use Zend\Diactoros\Stream;
 use Zend\Diactoros\UploadedFile;
 use Zend\Diactoros\Uri;
@@ -52,6 +53,14 @@ class DiactorosFactory implements FactoryInterface
             $method,
             $this->createStream()
         );
+    }
+
+    /**
+     * @inheritdoc
+     */
+    public function createServerRequestFromGlobals(): ServerRequestInterface
+    {
+        return ServerRequestFactory::fromGlobals();
     }
 
     /**

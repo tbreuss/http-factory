@@ -89,6 +89,14 @@ class HttpFactory implements FactoryInterface
     /**
      * @inheritdoc
      */
+    public function createServerRequestFromGlobals() : ServerRequestInterface
+    {
+        return $this->getFactory()->createServerRequestFromGlobals();
+    }
+
+    /**
+     * @inheritdoc
+     */
     public function createStream(string $content = ''): StreamInterface
     {
         return $this->getFactory()->createStream($content);

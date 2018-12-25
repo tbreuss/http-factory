@@ -59,6 +59,14 @@ class SlimFactory implements FactoryInterface
     /**
      * @inheritdoc
      */
+    public function createServerRequestFromGlobals(): ServerRequestInterface
+    {
+        // TODO: Implement createServerRequestFromGlobals() method.
+    }
+
+    /**
+     * @inheritdoc
+     */
     public function createUri(string $uri = ''): UriInterface
     {
         return Uri::createFromString($uri);

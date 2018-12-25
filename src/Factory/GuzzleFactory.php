@@ -49,6 +49,14 @@ class GuzzleFactory implements FactoryInterface
     /**
      * @inheritdoc
      */
+    public function createServerRequestFromGlobals(): ServerRequestInterface
+    {
+        return ServerRequest::fromGlobals();
+    }
+
+    /**
+     * @inheritdoc
+     */
     public function createStream(string $content = ''): StreamInterface
     {
         $stream = $this->createStreamFromFile('php://temp', 'r+');

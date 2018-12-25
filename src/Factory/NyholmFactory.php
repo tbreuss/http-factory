@@ -52,6 +52,14 @@ class NyholmFactory implements FactoryInterface
     /**
      * @inheritdoc
      */
+    public function createServerRequestFromGlobals(): ServerRequestInterface
+    {
+        // TODO: Implement createServerRequestFromGlobals() method.
+    }
+
+    /**
+     * @inheritdoc
+     */
     public function createStream(string $content = ''): StreamInterface
     {
         return $this->factory->createStream($content);

@@ -9,7 +9,7 @@
 
 
 HTTP-Factory is a PHP package that implements [PSR-17 HTTP factories](https://www.php-fig.org/psr/psr-17/) interface.
-Additionally it acts as a simple facade which allows easy access to concrete HTTP Factory packages.
+It offers auto-discovering support and acts as a simple facade to allow easy access to concrete HTTP Factory packages.
 
 All PSR-17 interfaces are implemented:
 
@@ -19,6 +19,7 @@ All PSR-17 interfaces are implemented:
 - Psr\Http\Message\UploadedFileFactoryInterface
 - Psr\Http\Message\UriFactoryInterface
 
+Additionally it implements a createServerRequestFromGlobals method, which is not part of PSR-17.
 
 ## Auto-discovering PSR-7 packages 
 
@@ -44,13 +45,55 @@ $ composer require slim/slim
 $ composer require nyholm/psr7
 ~~~
 
+When using the "nyholm/psr7" package you have to require the "nyholm/psr7-server" package, too.
+
+~~~bash
+$ composer require nyholm/psr7-server
+~~~
+
 Then install the HTTP-Factory package.
 
 ~~~bash
 $ composer require tebe/http-factory
 ~~~
 
-You can now use HTTP-Factory in the codebase of your project.
+You can now use HTTP-Factory in the codebase of your project like so:
+
+~~~php
+use Tebe\HttpFactory\HttpFactory;
+
+$factory = new HttpFactory();
+
+# creates a ResponseInterface
+$factory->createResponse(int $code = 200, string $reasonPhrase = '');
+
+# creates a ServerRequestInterface
+$factory->createServerRequest(string $method, $uri, array $serverParams = []);
+
+# creates a ServerRequestInterface
+$factory->createServerRequestFromGlobals();
+
+# creates a StreamInterface
+$factory->createStream(string $content = '');
+
+# creates a StreamInterface
+$factory->createStreamFromFile(string $filename, string $mode = 'r');
+
+# creates a StreamInterface
+$factory->createStreamFromResource($resource);
+
+# creates an UriInterface
+$factory->createUri(string $uri = '');
+
+# creates an UploadedFileInterface
+$factory->createUploadedFile(
+    StreamInterface $stream, 
+    int $size = null, 
+    int $error = \UPLOAD_ERR_OK, 
+    string $clientFilename = null, 
+    string $clientMediaType = null
+); 
+~~~
 
 
 ## Usage

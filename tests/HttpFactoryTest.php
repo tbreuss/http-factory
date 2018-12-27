@@ -66,6 +66,11 @@ class HttpFactoryTest extends TestCase
         $this->assertInstanceOf(ServerRequestInterface::class, $this->factory->createServerRequest('GET', '/'));
     }
 
+    public function testCreateServerRequestFromGlobals()
+    {
+        $this->assertInstanceOf(ServerRequestInterface::class, $this->factory->createServerRequestFromGlobals());
+    }
+
     public function testCreateStream()
     {
         $this->assertInstanceOf(StreamInterface::class, $this->factory->createStream('fromString'));

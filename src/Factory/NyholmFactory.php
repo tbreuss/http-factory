@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace Tebe\HttpFactory\Factory;
 
 use Nyholm\Psr7\Factory\Psr17Factory;
+use Nyholm\Psr7Server\ServerRequestCreator;
 use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\ServerRequestInterface;
 use Psr\Http\Message\StreamInterface;
@@ -30,7 +31,8 @@ class NyholmFactory implements FactoryInterface
      */
     public static function isInstalled(): bool
     {
-        return class_exists('Nyholm\\Psr7\\Factory\\Psr17Factory');
+        return class_exists('Nyholm\\Psr7\\Factory\\Psr17Factory')
+            && class_exists('Nyholm\\Psr7Server\\ServerRequestCreator');
     }
 
     /**
@@ -54,7 +56,16 @@ class NyholmFactory implements FactoryInterface
      */
     public function createServerRequestFromGlobals(): ServerRequestInterface
     {
-        // TODO: Implement createServerRequestFromGlobals() method.
+        $psr17Factory = new Psr17Factory();
+
+        $creator = new ServerRequestCreator(
+            $psr17Factory, // ServerRequestFactory
+            $psr17Factory, // UriFactory
+            $psr17Factory, // UploadedFileFactory
+            $psr17Factory  // StreamFactory
+        );
+
+        return $creator->fromGlobals();
     }
 
     /**

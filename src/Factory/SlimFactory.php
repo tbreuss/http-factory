@@ -8,6 +8,7 @@ use Psr\Http\Message\ServerRequestInterface;
 use Psr\Http\Message\StreamInterface;
 use Psr\Http\Message\UploadedFileInterface;
 use Psr\Http\Message\UriInterface;
+use Slim\Http\Environment;
 use Slim\Http\Headers;
 use Slim\Http\Request;
 use Slim\Http\Response;
@@ -25,7 +26,8 @@ class SlimFactory implements FactoryInterface
      */
     public static function isInstalled(): bool
     {
-        return class_exists('Slim\\Http\\Response')
+        return class_exists('Slim\\Http\\Environment')
+            && class_exists('Slim\\Http\\Response')
             && class_exists('Slim\\Http\\Request')
             && class_exists('Slim\\Http\\Stream')
             && class_exists('Slim\\Http\\Uri');
@@ -61,7 +63,8 @@ class SlimFactory implements FactoryInterface
      */
     public function createServerRequestFromGlobals(): ServerRequestInterface
     {
-        // TODO: Implement createServerRequestFromGlobals() method.
+        $environment = Environment::mock();
+        return Request::createFromEnvironment($environment);
     }
 
     /**

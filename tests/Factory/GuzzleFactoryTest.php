@@ -37,6 +37,11 @@ class GuzzleFactoryTest extends TestCase
         $this->assertInstanceOf(ServerRequest::class, $this->factory->createServerRequest('GET', '/'));
     }
 
+    public function testCreateServerRequestFromGlobals()
+    {
+        $this->assertInstanceOf(ServerRequest::class, $this->factory->createServerRequestFromGlobals());
+    }
+
     public function testCreateStream()
     {
         $this->assertInstanceOf(Stream::class, $this->factory->createStream('fromString'));

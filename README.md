@@ -149,6 +149,34 @@ $response = $factory->createResponse(200);
 echo $response->getStatusCode();
 ~~~
 
+## Tests
+
+Two test
+
+Run PHPUnit:
+
+~~~bash
+$ composer phpunit
+~~~
+
+Run PHP_CodeSniffer:
+
+~~~bash
+$ composer phpcs
+~~~
+
+Run PHP Code Beautifier and Fixer
+
+~~~bash
+$ composer phpcbf
+~~~
+
+Run PHPUnit and PHP_CodeSniffer together:
+
+~~~bash
+$ composer test
+~~~
+
 ## Suggestions
 
 Any suggestions? Open an issue.

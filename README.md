@@ -151,8 +151,6 @@ echo $response->getStatusCode();
 
 ## Tests
 
-Two test
-
 Run PHPUnit:
 
 ~~~bash
@@ -165,7 +163,7 @@ Run PHP_CodeSniffer:
 $ composer phpcs
 ~~~
 
-Run PHP Code Beautifier and Fixer
+Run PHP Code Beautifier and Fixer:
 
 ~~~bash
 $ composer phpcbf

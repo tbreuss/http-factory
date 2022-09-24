@@ -22,7 +22,7 @@ class HttpFactoryTest extends TestCase
      */
     private $factory;
 
-    public function setUp()
+    protected function setUp(): void
     {
         HttpFactory::setStrategies([
             DiactorosFactory::class,

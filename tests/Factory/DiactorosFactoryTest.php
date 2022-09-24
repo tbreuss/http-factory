@@ -2,14 +2,13 @@
 
 namespace Tests\Tebe\HttpFactory;
 
+use Laminas\Diactoros\Response;
+use Laminas\Diactoros\ServerRequest;
+use Laminas\Diactoros\Stream;
+use Laminas\Diactoros\Uri;
 use PHPUnit\Framework\TestCase;
 use Psr\Http\Message\UploadedFileInterface;
 use Tebe\HttpFactory\Factory\DiactorosFactory;
-use Zend\Diactoros\Response;
-use Zend\Diactoros\ServerRequest;
-use Zend\Diactoros\Stream;
-use Zend\Diactoros\UploadedFile;
-use Zend\Diactoros\Uri;
 
 class DiactorosFactoryTest extends TestCase
 {
@@ -18,7 +17,7 @@ class DiactorosFactoryTest extends TestCase
      */
     private $factory;
 
-    public function setUp()
+    protected function setUp(): void
     {
         $this->factory = new DiactorosFactory();
     }

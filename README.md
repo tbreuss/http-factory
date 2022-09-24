@@ -7,9 +7,9 @@
 [![License](https://img.shields.io/github/license/tbreuss/http-factory.svg)](https://github.com/tbreuss/http-factory/blob/master/LICENSE)
 [![PHP from Packagist](https://img.shields.io/packagist/php-v/tebe/http-factory.svg)](https://packagist.org/packages/tebe/http-factory)
 
-
 HTTP-Factory is a PHP package that implements [PSR-17 HTTP factories](https://www.php-fig.org/psr/psr-17/) interface.
-It offers auto-discovering support and acts as a simple facade to allow easy access to concrete HTTP Factory packages.
+It acts as a simple facade to provide easy access to concrete HTTP factory packets.
+As its main feature it offers support for auto-discovery of the supported factories.
 
 All PSR-17 interfaces are implemented:
 
@@ -19,13 +19,13 @@ All PSR-17 interfaces are implemented:
 - Psr\Http\Message\UploadedFileFactoryInterface
 - Psr\Http\Message\UriFactoryInterface
 
-Additionally it implements a createServerRequestFromGlobals method, which is not part of PSR-17.
+Additionally, it implements a createServerRequestFromGlobals method, which is not part of PSR-17.
 
 ## Auto-discovering PSR-7 packages 
 
 The package features auto-discovery support for the following PSR-7 packages:
 
-1. zendframework/zend-diactoros
+1. laminas/laminas-diactoros
 2. guzzlehttp/psr7  
 3. slim/slim
 4. nyholm/psr7
@@ -33,13 +33,12 @@ The package features auto-discovery support for the following PSR-7 packages:
 The auto-discovery mechanism assumes that you are using one (and only one) of the above PSR-7 packages in your project.
 The first detected PSR-17 package will then be used for all interface factory methods.
 
-
 ## Installation
 
 When starting a new project one of the following PSR-7 packages must be installed.
 
 ~~~bash
-$ composer require zendframework/zend-diactoros
+$ composer require laminas/laminas-diactoros
 $ composer require guzzlehttp/psr7
 $ composer require slim/slim
 $ composer require nyholm/psr7
@@ -94,7 +93,6 @@ $factory->createUploadedFile(
     string $clientMediaType = null
 ); 
 ~~~
-
 
 ## Usage
 

@@ -3,17 +3,17 @@ declare(strict_types=1);
 
 namespace Tebe\HttpFactory\Factory;
 
+use Laminas\Diactoros\Response;
+use Laminas\Diactoros\ServerRequest;
+use Laminas\Diactoros\ServerRequestFactory;
+use Laminas\Diactoros\Stream;
+use Laminas\Diactoros\UploadedFile;
+use Laminas\Diactoros\Uri;
 use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\ServerRequestInterface;
 use Psr\Http\Message\StreamInterface;
 use Psr\Http\Message\UploadedFileInterface;
 use Psr\Http\Message\UriInterface;
-use Zend\Diactoros\Response;
-use Zend\Diactoros\ServerRequest;
-use Zend\Diactoros\ServerRequestFactory;
-use Zend\Diactoros\Stream;
-use Zend\Diactoros\UploadedFile;
-use Zend\Diactoros\Uri;
 
 /**
  * Simple class to create response instances of PSR-7 classes.
@@ -21,14 +21,14 @@ use Zend\Diactoros\Uri;
 class DiactorosFactory implements FactoryInterface
 {
     /**
-     * Check whether Zend Diactoros is available
+     * Check whether Laminas Diactoros is available
      */
     public static function isInstalled(): bool
     {
-        return class_exists('Zend\\Diactoros\\Response')
-            && class_exists('Zend\\Diactoros\\ServerRequest')
-            && class_exists('Zend\\Diactoros\\Stream')
-            && class_exists('Zend\\Diactoros\\Uri');
+        return class_exists('Laminas\\Diactoros\\Response')
+            && class_exists('Laminas\\Diactoros\\ServerRequest')
+            && class_exists('Laminas\\Diactoros\\Stream')
+            && class_exists('Laminas\\Diactoros\\Uri');
     }
 
     /**

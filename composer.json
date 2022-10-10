@@ -27,7 +27,11 @@
   },
   "autoload": {
     "psr-4": {
-      "Tebe\\HttpFactory\\": "src/",
+      "Tebe\\HttpFactory\\": "src/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
       "Tests\\Tebe\\HttpFactory\\": "tests/"
     }
   },

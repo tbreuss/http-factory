@@ -1,6 +1,6 @@
 <?php
 
-namespace Tests\Tebe\HttpFactory;
+namespace Tests\Tebe\HttpFactory\Factory;
 
 use Nyholm\Psr7\Response;
 use Nyholm\Psr7\ServerRequest;

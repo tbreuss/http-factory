@@ -1,6 +1,6 @@
 <?php
 
-namespace Tests\Tebe\HttpFactory;
+namespace Tests\Tebe\HttpFactory\Factory;
 
 use GuzzleHttp\Psr7\Response;
 use GuzzleHttp\Psr7\ServerRequest;

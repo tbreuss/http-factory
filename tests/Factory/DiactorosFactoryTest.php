@@ -1,6 +1,6 @@
 <?php
 
-namespace Tests\Tebe\HttpFactory;
+namespace Tests\Tebe\HttpFactory\Factory;
 
 use Laminas\Diactoros\Response;
 use Laminas\Diactoros\ServerRequest;

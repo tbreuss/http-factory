@@ -1,6 +1,6 @@
 <?php
 
-namespace Tests\Tebe\HttpFactory;
+namespace Tests\Tebe\HttpFactory\Factory;
 
 use PHPUnit\Framework\TestCase;
 use Psr\Http\Message\UploadedFileInterface;
@@ -10,7 +10,7 @@ use Slim\Http\Stream;
 use Slim\Http\Uri;
 use Tebe\HttpFactory\Factory\SlimFactory;
 
-class SlimeFactoryTest extends TestCase
+class SlimFactoryTest extends TestCase
 {
     /**
      * @var SlimFactory

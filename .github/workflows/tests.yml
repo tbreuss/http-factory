@@ -35,5 +35,5 @@ jobs:
       - name: Install dependencies
         run: composer install --no-progress --prefer-dist --optimize-autoloader
 
-      - name: Test with Codeception
+      - name: Test with phpcs and phpunit
         run: composer test

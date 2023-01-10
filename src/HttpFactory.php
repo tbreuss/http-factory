@@ -6,7 +6,7 @@ namespace Tebe\HttpFactory;
 use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\ServerRequestInterface;
 use Psr\Http\Message\StreamInterface;
-use PSR\Http\Message\UploadedFileInterface;
+use Psr\Http\Message\UploadedFileInterface;
 use Psr\Http\Message\UriInterface;
 use RuntimeException;
 use Tebe\HttpFactory\Factory\DiactorosFactory;
